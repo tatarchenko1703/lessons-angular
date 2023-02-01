@@ -1,0 +1,14 @@
+<div class="container">
+
+    <h1 class="header-box">Plan your day!</h1>
+    <h1 class="header-box">User: Evgen Bartolomey. Count of task: {{ recCount }}</h1>
+</div>
+
+<div class="container">
+    <div class="border-top">
+        <input class="task" type="text" [(ngModel)]="newTask" name="usertask" id="usertask" value="">
+        <button class="add" type="button" name="add" id="btnAdd" (click)="addNewTask()">Add</button>
+    </div>
+</div>
+
+<app-childtable [sendTask]="sendTask" (countRecord)="getCount($event)"></app-childtable>

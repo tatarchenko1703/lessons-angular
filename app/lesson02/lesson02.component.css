@@ -1,0 +1,242 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#notify {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 12px;
+  width: 89%;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+}
+
+#notify.error {
+  background-color: #DD2C00;
+}
+
+.header {
+  background-color: #e5e7e5;
+  color: #000;
+  font-size: 28px;
+  border: 1px solid #a5a8a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+}
+
+.section-form {
+  margin-top: 100px;
+  width: 30%;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.section-form .name {
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.section-form .name h1 {
+  font-weight: 400;
+}
+.section-form .field {
+  width: 95%;
+  position: relative;
+}
+.section-form input[type=text],
+.section-form input[type=password],
+.section-form input[type=email] {
+  display: block;
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #C0C0C0;
+  font-size: 22px;
+  font-weight: 500;
+  border-width: 1px;
+  background: white;
+  outline: #EAEBED;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+.section-form input[type=email]:focus,
+.section-form input[type=password]:focus,
+.section-form input[type=text]:focus {
+  outline: 4px solid #84acdc;
+  border: 1px solid #2785F7;
+}
+.section-form .add {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #139846;
+  font-size: 22px;
+  font-weight: 500;
+  border-width: 1px;
+  background: rgb(34, 166, 85);
+  margin-top: 0px;
+  padding-left: 15px;
+  color: #fff;
+}
+.section-form .add:hover {
+  outline: 4px solid #b1dec2;
+}
+.section-form .add:disabled {
+  background: silver;
+  outline: 4px solid #e5e7e5;
+}
+.section-form .add:enabled {
+  border: 1px solid #139846;
+  background: rgb(34, 166, 85);
+}
+
+.section-table {
+  margin-top: 100px;
+  width: 65%;
+  height: 600px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+.section-table table {
+  font-size: 18px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 50px;
+}
+.section-table table thead {
+  border-top: 1px solid rgb(174, 183, 191);
+  border-bottom: 2px solid rgb(174, 183, 191);
+  height: 50px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+}
+.section-table table thead .th-num {
+  width: 10%;
+  text-align: center;
+}
+.section-table table thead .th-login {
+  width: 20%;
+}
+.section-table table thead .th-passowrd {
+  width: 10%;
+}
+.section-table table thead .th-email {
+  width: 20%;
+}
+.section-table table thead .th-edit {
+  width: 20%;
+}
+.section-table table thead .th-delete {
+  width: 20%;
+}
+.section-table table tr {
+  height: 50px;
+  display: block;
+  position: relative;
+}
+.section-table table tr .td-num {
+  width: 10%;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+.section-table table tr .td-login {
+  width: 20%;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+.section-table table tr .td-passowrd {
+  width: 10%;
+  font-size: 6px;
+  font-weight: 400;
+  text-align: left;
+}
+.section-table table tr .td-email {
+  width: 20%;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+.section-table table tr .td-edit {
+  width: 20%;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+.section-table table tr .td-edit .edit {
+  display: block;
+  content: "Edit";
+  width: 80px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #bf8807;
+  font-size: 16px;
+  font-weight: 500;
+  border-width: 1px;
+  background: #f2c457;
+  color: #000;
+}
+.section-table table tr .td-edit .edit:hover {
+  outline: 4px solid #e1d083;
+}
+.section-table table tr .td-delete {
+  width: 20%;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+.section-table table tr .td-delete .delete {
+  display: block;
+  content: "Delete";
+  width: 80px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #bf0707;
+  font-size: 16px;
+  font-weight: 500;
+  border-width: 1px;
+  background: #c42f11;
+  color: #fff;
+}
+.section-table table tr .td-delete .delete:hover {
+  outline: 4px solid #eba3a3;
+}
+
+.hide {
+  display: none;
+}
+
+.hide {
+  display: block;
+}/*# sourceMappingURL=lesson02.component.css.map */

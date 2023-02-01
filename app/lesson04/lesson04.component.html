@@ -1,0 +1,12 @@
+<div class="container">
+    <h1 class="header-box">My phone book!</h1>
+</div>
+
+<div class="container">
+    <div class="border-top">
+        <input class="task" type="text" [(ngModel)]="searchText" name="searchText" value="" placeholder="search text goes here">
+        <button class="add" type="button" name="add" (click)="addNewPhone()">add phone</button>
+    </div>
+</div>
+
+<app-table [searchText]="searchText" [addMode]="addMode" (getMode) = "resetAdd($event)"></app-table>

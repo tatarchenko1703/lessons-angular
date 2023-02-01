@@ -1,0 +1,22 @@
+<header class="header">
+    <h1>List of prohibited words:</h1>
+</header>
+<div class="container">
+    <div class="section-form">
+        <div class="bad-word">
+            <span class="lbl-bad">Bad words: </span>
+            <span class="info-bad">{{ userData.badWord }}</span>
+        </div>
+
+        <div class="input-box">
+            <input [class]="userData.errorWord ? 'word error' : 'word'" type="text" name="word" [(ngModel)]="userData.word" (input)="onWordChange()" required placeholder="{{ userData.placeWord }}">
+            <button [class]="'button add'" type="button" name="add" (click)="onAddClick()">Add</button>
+            <button [class]="'button reset'" type="button" name="reset" (click)="onResetClick()">Reset</button>
+        </div>
+
+        <div class="input-box">
+            <textarea name="text" [class]="userData.errorText ? 'texthere error' : 'texthere'" cols="30" rows="10" [(ngModel)]="userData.cenzorText" (input)="onCenzorChange()" required placeholder="{{ userData.placeText }}"></textarea>
+            <button [class]="'button cenzor'" type="button" name="cenzor" (click)="onCenzorClick()">Cenzor</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="section-table">
+        <table id="table">
+            <thead>
+                <th class="th-fname" (click)="doOnSort(0)">First name
+                    <span [innerText]="(currCol != 0) ? '' : (isAscending ? charUp : charDown)"></span>
+                </th>
+                <th class="th-lname" (click)="doOnSort(1)">Last name
+                    <span [innerText]="(currCol != 1) ? '' : (isAscending ? charUp : charDown)"></span>
+                </th>
+                <th class="th-phone" (click)="doOnSort(2)">Number
+                    <span [innerText]="(currCol != 2) ? '' : (isAscending ? charUp : charDown)"></span>
+                </th>
+                <th class="th-edit">Edit</th>
+                <th class="th-delete">Delete</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recPhone of arrPhone | sort: isAscending : currCol | search : searchText; index as idx">
+                    <td class="td-fname">{{ recPhone.fname | titlecase}}
+                    </td>
+                    <td class="td-lname">{{ recPhone.lname | titlecase}}
+                    </td>
+                    <td class="td-phone">{{ recPhone.phone | uppercase}}
+                    </td>
+
+                    <td class="td-edit"><button class="edit" [disabled]="editMode"
+                            (click)="doOnEditRec(idx)">Edit</button></td>
+                    <td class="td-delete"><button class="delete" [disabled]="editMode"
+                            (click)="doOnDeleteRec(idx)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container-form">
+        <div [class]="editMode|| addMode ? 'modal-container visible' : 'modal-container'">
+        </div>
+        <div [class]="editMode|| addMode ? 'section-form show' : 'section-form'">
+            <form name="formLogin">
+                <div class="header-box">
+                    <h3 class="header-form">Add phone</h3>
+                    <span class="close" (click)="doOnSaveClick(false)">{{ charClose }}</span>
+                </div>
+                <div class="edit-box">
+                    <input type="text" class="edit-text" [(ngModel)]="currRec.fname" name="fname" value="" placeholder="Enter first name">
+                    <input type="text" class="edit-text" [(ngModel)]="currRec.lname" name="lname" value="" placeholder="Enter last name">
+                    <input type="text" class="edit-text" [(ngModel)]="currRec.phone" name="phone" value="" placeholder="number phone goes here">
+                </div>
+                <div class="footer-box">
+                    <button class="save" type="button" name="save" (click)="doOnSaveClick(true)">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

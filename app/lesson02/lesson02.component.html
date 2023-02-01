@@ -1,0 +1,62 @@
+<header class="header">
+    <div class="container">
+        <h1>Angular users task</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="section-form">
+        <form name="formLogin">
+            <div class="name">
+                <div class="field">
+                    <label for="login">Login</label>
+                    <input type="text" name="login" [(ngModel)]="userRec.userName" id="login" value=""
+                        (input)="checkLogin()" placeholder="Enter login">
+                    <div *ngIf='!isValidLogin && userRec.userName.length > 0' class='myError'>{{ textError }}</div>
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" [(ngModel)]="userRec.userPsw" id="password" value="" 
+                        (input)="checkPsw()" placeholder="Enter password">
+                    <div *ngIf='!isValidPsw && userRec.userPsw.length > 0' class='myError'>{{ textError }}</div>
+                </div>
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" [(ngModel)]="userRec.userEMail" id="email" value="" 
+                        (input)="checkMail()" placeholder="Enter email">
+                    <div *ngIf='!isValidEMail && userRec.userEMail.length > 0' class='myError'>{{ textError }}</div>
+                </div>
+                <div class="field">
+                    <button *ngIf="!editMode" class="add" type="button" name="add" id="btnAdd" (click)="doOnAddUser()"
+                        [disabled]="!isAddEnabled">Add
+                        user</button>
+                    <button *ngIf="editMode" class="add" type="button" name="add" id="btnAdd" (click)="doOnUpdateUser()"
+                        >Update user</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="section-table">
+
+        <table id="table">
+            <thead>
+                <th class="th-num">#</th>
+                <th class="th-login">Login</th>
+                <th class="th-passowrd">Password</th>
+                <th class="th-email">Email</th>
+                <th class="th-edit">Edit</th>
+                <th class="th-delete">Delete</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of ItemsUsers; let idx = index;">
+                    <td class="td-num">{{ idx + 1 }}</td>
+                    <td class="td-login">{{ user.userName }}</td>
+                    <td class="td-password">{{ '*'.repeat(user.userPsw.length) }}</td>
+                    <td class="td-email">{{ user.userEMail }}</td>
+                    <td class="td-edit"><button class="edit" (click)="editUser(idx)">Edit</button></td>
+                    <td class="td-delete"><button class="delete" (click)="deleteUser(idx)" [disabled]="editMode">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
