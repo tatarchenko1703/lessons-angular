@@ -1,0 +1,37 @@
+<!-- <div class="container-fluid d-flex align-items-center px-0"> -->
+<div class="container-fluid d-flex align-items-center justify-content-center fs-5 px-0">
+    <div class="px-0" style="width: 100%; height: 60px">
+        <div class="nav nav-tabs px-0" style="width: 100%">
+            <span class="navbar-text mx-5" style="width: 10%; line-height: 40px;"> Last works >>>
+            </span>
+            <button routerLink='/work/cenzor' [class]="selectedNav == 0 ? 'nav-link active' : 'nav-link'"
+                id="nav-cenzor-tab" data-bs-toggle="tab" data-bs-target="#nav-cenzor" type="button" role="tab"
+                aria-controls="nav-cenzor" aria-selected="true">Cenzor</button>
+            <button routerLink='/work/users' [class]="selectedNav == 1 ? 'nav-link active' : 'nav-link'" id="nav-user-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-user" type="button" role="tab" aria-controls="nav-user"
+                aria-selected="false">Users</button>
+            <button routerLink='/work/task' [class]="selectedNav == 2 ? 'nav-link active' : 'nav-link'" id="nav-task-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-task" type="button" role="tab" aria-controls="nav-task"
+                aria-selected="false">Task</button>
+
+            <span class="navbar-text text-end" style="width: 65%; line-height: 40px;">
+                <a class="text-danger text-decoration-none" routerLink='' routerLinkActive="route-active"
+                    aria-current="page">
+                    Back to >>> Home
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="tab-content" id="nav-tabContent" style="width: 100%">
+    <div [class]="selectedNav == 0 ? 'tab-pane fade show active' : 'tab-pane fade'" id="nav-cenzor" role="tabpanel" aria-labelledby="nav-cenzor-tab">
+        <app-cenzor></app-cenzor>
+    </div>
+    <div [class]="selectedNav == 1 ? 'tab-pane fade show active' : 'tab-pane fade'" id="nav-user" role="tabpanel" aria-labelledby="nav-user-tab">
+        <app-users></app-users>
+    </div>
+    <div [class]="selectedNav == 2 ? 'tab-pane fade show active' : 'tab-pane fade'" id="nav-task" role="tabpanel" aria-labelledby="nav-task-tab">
+        <app-task></app-task>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.nav-link {
+    &:focus {
+        color: rgb(14, 195, 14);
+    }
+
+    &:active {
+        color: rgb(14, 195, 14);
+    }
+}

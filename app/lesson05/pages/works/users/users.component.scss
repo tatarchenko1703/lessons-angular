@@ -1,0 +1,286 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border - box;
+}
+
+
+.myError {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 12px;
+    width: 100%;
+    color: #fff;
+    // display: block;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    border-radius: 4px;
+    background-color: #e65936;
+}
+
+// .notify.error {
+//     background-color: #DD2C00;
+// }
+
+// .header {
+//     // width: 110%;
+//     background-color: #e5e7e5;
+//     color: #000;
+//     font-size: 28px;
+//     border: 1px solid #a5a8a5;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+// }
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.section-form {
+    margin-top: 60px;
+    width: 30%;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    .name {
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-weight: 400;
+        }
+    }
+
+    .field {
+        width: 95%;
+        height: 130px;
+        position: relative;
+    }
+
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        display: block;
+        width: 100%;
+        height: 45px;
+        border-radius: 4px;
+        border: 1px solid #C0C0C0;
+        font-size: 22px;
+        font-weight: 500;
+        border-width: 1px;
+        background: white;
+        outline: #EAEBED;
+        margin-top: 10px;
+        padding-left: 15px;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="text"]:focus {
+        outline: 4px solid #cbdcf2;
+        border: 1px solid #2785F7;
+    }
+
+
+    .add {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 45px;
+        border-radius: 4px;
+        border: 1px solid #139846;
+        font-size: 22px;
+        font-weight: 500;
+        border-width: 1px;
+        background: rgb(34, 166, 85);
+        margin-top: 0px;
+        padding-left: 15px;
+        color: #fff;
+
+        &:hover {
+            outline: 4px solid #b1dec2;
+        }
+
+        &:disabled {
+            border: 1px solid #7a7d7b;
+            background: silver;
+            // outline: 4px solid #e5e7e5;
+        }
+
+        &:enabled {
+            border: 1px solid #139846;
+            background: rgb(34, 166, 85);
+        }
+    }
+}
+
+.section-table {
+    margin-top: 68px;
+    width: 65%;
+    height: 600px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+
+    table {
+        font-size: 18px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+        // display: flex;
+        // justify-content: center;
+
+
+        thead {
+            border-top: 1px solid rgb(174, 183, 191);
+            border-bottom: 2px solid rgb(174, 183, 191);
+            height: 50px;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 600;
+            // position: fixed;
+
+            .th-num {
+                width: 10%;
+                text-align: center;
+            }
+
+            .th-login {
+                width: 20%;
+            }
+
+            .th-passowrd {
+                width: 10%;
+            }
+
+            .th-email {
+                width: 20%;
+            }
+
+            .th-edit {
+                width: 20%;
+            }
+
+            .th-delete {
+                width: 20%;
+            }
+
+        }
+
+        tr {
+            height: 50px;
+            // display: block;
+            // flex-direction: row;
+            // justify-content: space-between;
+            // align-items: center;
+            // position: relative;
+
+            .td-num {
+                width: 10%;
+                // width: 100px;
+                font-weight: 400;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .td-login {
+                width: 20%;
+                font-size: 18px;
+                font-weight: 400;
+                text-align: left;
+            }
+
+            .td-passowrd {
+                width: 10%;
+                font-size: 18px;
+                font-weight: 400;
+                text-align: left;
+            }
+
+            .td-email {
+                width: 20%;
+                font-size: 18px;
+                font-weight: 400;
+                text-align: left;
+            }
+
+            .td-edit {
+                width: 20%;
+                font-size: 16px;
+                font-weight: 400;
+                text-align: center;
+
+                .edit {
+                    display: block;
+                    content: 'Edit';
+                    width: 80px;
+                    height: 35px;
+                    border-radius: 4px;
+                    border: 1px solid #bf8807;
+                    font-size: 18px;
+                    font-weight: 500;
+                    border-width: 1px;
+                    background: #f2c457;
+                    color: #000;
+
+                    &:hover {
+                        outline: 4px solid #e1d083;
+                    }
+                }
+
+            }
+
+            .td-delete {
+                width: 20%;
+                font-size: 16px;
+                font-weight: 400;
+                text-align: center;
+
+                .delete {
+                    display: block;
+                    content: 'Delete';
+                    width: 80px;
+                    height: 35px;
+                    border-radius: 4px;
+                    border: 1px solid #bf0707;
+                    font-size: 18px;
+                    font-weight: 500;
+                    border-width: 1px;
+                    background: #c42f11;
+                    color: #fff;
+
+                    &:hover {
+                        outline: 4px solid #eba3a3;
+                    }
+
+                    &:disabled {
+                        border: 1px solid #7a7d7b;
+                        background: silver;
+                    }
+                }
+            }
+        }
+    }
+}

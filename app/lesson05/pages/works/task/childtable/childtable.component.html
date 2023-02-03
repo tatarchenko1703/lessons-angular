@@ -1,0 +1,48 @@
+<div class="main-container">
+    <div class="section-table">
+        <table id="table">
+            <thead>
+                <th class="th-num">#</th>
+                <th class="th-task">Task</th>
+                <th class="th-check">Check</th>
+                <th class="th-done">Done/ In progress</th>
+                <th class="th-edit">Edit</th>
+                <th class="th-delete">Delete</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recTask of ItemsTasks; let idx = index;">
+                    <td class="td-num">{{ idx + 1 }}</td>
+                    <td class="td-task">{{ recTask.taskName }}</td>
+
+                    <td class="td-check">
+                        <label>
+                            <input class="checkbox" [(ngModel)]="recTask.taskCheck" type="checkbox"
+                                (click)="doOnSetCheck(idx)" />
+                            <span class="fake-checkbox"></span>
+                        </label>
+                    </td>
+                    <td class="td-done" [style.color]="recTask.taskCheck ? 'rgb(34, 166, 85)' : '#c42f11'">{{
+                        recTask.taskStatus }}</td>
+                    <td class="td-edit"><button class="edit" [disabled]="editMode"
+                            (click)="doOnEditRec(idx)">Edit</button></td>
+                    <td class="td-delete"><button class="delete" [disabled]="!recTask.taskCheck || editMode"
+                            (click)="doOnDeleteRec(idx)">Delete</button></td>
+                </tr>
+            </tbody>
+            <tfoot [style.visibility]="editMode ? 'visible' : 'hidden'">
+                <tr>
+                    <td class="td-num td-foot"></td>
+                    <td class="td-task td-foot"></td>
+                    <td class="td-check td-foot"></td>
+                    <td class="td-done td-foot">
+                        <input class="task" type="text" name="edittask" [(ngModel)]="editTask" [disabled]="!editMode"
+                            value="">
+                    </td>
+                    <td class="td-edit td-foot"><button class="save" [disabled]="!editMode"
+                            (click)="doOnSaveRec()">Save</button></td>
+                    <td class="td-delete td-foot"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
