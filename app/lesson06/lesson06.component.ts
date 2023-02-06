@@ -70,11 +70,15 @@ export class Lesson06Component {
       const id = this.blogs.slice(-1)[0].id;
       newPost.id = id + 1;
     }
-    this.blogService.addNewPost(newPost);
-    this.blogService.editPostMode = false;
-    this.blogService.addPostMode = false;
-    this.postTitle = '';
-    this.postText = '';
+    let lOk = newPost.message.length > 0 &&
+      newPost.topic.length > 0;
+    if (lOk) { 
+      this.blogService.addNewPost(newPost);
+      this.blogService.editPostMode = false;
+      this.blogService.addPostMode = false;
+      this.postTitle = '';
+      this.postText = '';
+    }
   }
 
   onEditPost(): void { 
