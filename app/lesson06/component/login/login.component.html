@@ -1,0 +1,60 @@
+<div class="container-form">
+    <div [class]="userService.loginMode || userService.addMode? 'modal-container visible' : 'modal-container'">
+    </div>
+
+    <div [class]="userService.loginMode || userService.addMode? 'section-custom-form row d-flex p-0 fs-3 show' : 'section-custom-form'">
+        <form class="p-0">
+            <div class="header-form p-4">
+                <h3 *ngIf="userService.loginMode">Sign In</h3>
+                <h3 *ngIf="userService.addMode">Sign Up</h3>
+                <span class="close" 
+                (click)="onClose()">{{ charClose }}</span>
+            </div>
+
+            <div *ngIf="userService.addMode" class="px-4 mb-3 mt-4 fs-4">
+                <label for="name" class="form-label">User name</label>
+                <input 
+                    type="text" 
+                    [(ngModel)]="userName" 
+                    name="email" 
+                    class="form-control w-100 fs-4" 
+                    id="name"
+                    placeholder="Enter username">
+            </div>
+
+            <div class="px-4 mb-3 mt-4 fs-4">
+                <label for="email" class="form-label">Email</label>
+                <input 
+                    type="text" 
+                    [(ngModel)]="userEmail" 
+                    name="email" 
+                    class="form-control w-100 fs-4" id="email"
+                    placeholder="Enter email">
+            </div>
+
+            <div class="px-4 mb-3  mb-5 fs-4">
+                <label for="password" class="form-label">Password</label>
+                <input 
+                    type="password" 
+                    [(ngModel)]="userPassword" 
+                    name="password" 
+                    class="form-control w-100 fs-4"
+                    id="password" 
+                    placeholder="Enter password">
+            </div>
+
+            <div class="footer-form p-4">
+                <button 
+                    type="button" 
+                    class="btn btn-secondary me-3" 
+                    style="height: 40px"
+                    (click)="onClose()">Close</button>
+                <button 
+                    type="button" 
+                    class="btn btn-primary" 
+                    style="height: 40px" 
+                    (click)="onSubmit()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

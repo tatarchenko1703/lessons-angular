@@ -14,17 +14,7 @@
   background-color: #e65936;
 }
 
-.header {
-  background-color: #e5e7e5;
-  color: #000;
-  font-size: 28px;
-  border: 1px solid #a5a8a5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
+.main-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -34,7 +24,7 @@
 }
 
 .section-form {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 30%;
   height: 450px;
   display: flex;
@@ -109,7 +99,7 @@
 }
 
 .section-table {
-  margin-top: 100px;
+  margin-top: 68px;
   width: 65%;
   height: 600px;
   overflow: auto;
@@ -227,12 +217,4 @@
 .section-table table tr .td-delete .delete:disabled {
   border: 1px solid #7a7d7b;
   background: silver;
-}
-
-.hide {
-  display: none;
-}
-
-.hide {
-  display: block;
-}/*# sourceMappingURL=lesson02.component.css.map */
+}/*# sourceMappingURL=users.component.css.map */

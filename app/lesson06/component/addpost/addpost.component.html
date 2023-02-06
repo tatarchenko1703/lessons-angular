@@ -1,0 +1,55 @@
+<div class="container-form">
+    <div [class]="blogService.addPostMode  || blogService.editPostMode? 'modal-container visible' : 'modal-container'">
+    </div>
+
+    <div [class]="blogService.addPostMode  || blogService.editPostMode ? 'section-custom-form row d-flex p-0 fs-3 show' : 'section-custom-form'">
+        <form class="p-0">
+            <div class="header-form p-4">
+                <h3>Add post</h3>
+                <span 
+                    class="close" 
+                    (click)="onClose()">{{ charClose }}
+                </span>
+            </div>
+            <div class="px-4 mb-3 mt-4 fs-4">
+                <label 
+                    for="title" 
+                    class="form-label">Title
+                </label>
+                <input 
+                    type="text" 
+                    [(ngModel)]="postTitle" 
+                    name="email" 
+                    class="form-control w-100 fs-4" 
+                    id="title">
+            </div>
+            <div class="px-4 mb-3  mb-5 fs-4">
+                <label 
+                    for="textpost"
+                    class="form-label">Text
+                </label>
+                <textarea 
+                    class="form-control" 
+                    [(ngModel)]="postText"
+                    name="textpost" 
+                    id="textpost"
+                    style="height: 100px"></textarea>
+            </div>
+            
+            <div class="footer-form p-4">
+                <button 
+                    type="button" 
+                    class="btn btn-secondary me-3" 
+                    style="height: 40px"
+                    (click)="onClose()">Close
+                </button>
+                <button 
+                    type="button" 
+                    class="btn btn-success" 
+                    style="height: 40px" 
+                    (click)="onAddPost()">Post
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

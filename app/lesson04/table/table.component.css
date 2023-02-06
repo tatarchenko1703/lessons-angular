@@ -1,0 +1,291 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+}
+
+.container-form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.section-table {
+  margin-top: 40px;
+  width: 100%;
+  height: 600px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+.section-table table {
+  font-size: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+.section-table table thead {
+  border-top: 1px solid rgb(174, 183, 191);
+  border-bottom: 2px solid rgb(174, 183, 191);
+  height: 50px;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.section-table table thead .th-fname {
+  width: 20%;
+}
+.section-table table thead .th-lname {
+  width: 20%;
+}
+.section-table table thead .th-phone {
+  width: 30%;
+}
+.section-table table thead .th-edit {
+  width: 15%;
+}
+.section-table table thead .th-delete {
+  width: 15%;
+}
+.section-table table tr {
+  height: 50px;
+  vertical-align: middle;
+}
+.section-table table tr .td-fname {
+  width: 20%;
+  font-weight: 400;
+  text-align: left;
+}
+.section-table table tr .td-lname {
+  width: 20%;
+  font-weight: 400;
+  text-align: left;
+}
+.section-table table tr .td-phone {
+  width: 30%;
+  font-weight: 400;
+  text-align: left;
+}
+.section-table table tr .td-edit {
+  width: 15%;
+  text-align: center;
+}
+.section-table table tr .td-edit .edit {
+  display: block;
+  content: "Edit";
+  width: 80px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #bf8807;
+  font-size: 18px;
+  font-weight: 500;
+  border-width: 1px;
+  background: #f2c457;
+  color: #000;
+}
+.section-table table tr .td-edit .edit:hover {
+  outline: 4px solid #e1d083;
+}
+.section-table table tr .td-edit .edit:disabled {
+  border: 1px solid #bf8807;
+  background: #cab27b;
+}
+.section-table table tr .td-edit .save {
+  display: block;
+  margin-top: 10px;
+  width: 80px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #139846;
+  font-size: 18px;
+  font-weight: 500;
+  border-width: 1px;
+  background: rgb(34, 166, 85);
+  color: #fff;
+}
+.section-table table tr .td-edit .save:hover {
+  outline: 4px solid #b1dec2;
+}
+.section-table table tr .td-edit .save:disabled {
+  border: 1px solid #139846;
+  background: rgb(116, 206, 151);
+}
+.section-table table tr .td-edit .save:enabled {
+  border: 1px solid #139846;
+  background: rgb(34, 166, 85);
+}
+.section-table table tr .td-delete {
+  width: 15%;
+  text-align: center;
+}
+.section-table table tr .td-delete .delete {
+  display: block;
+  content: "Delete";
+  width: 80px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #bf0707;
+  font-size: 18px;
+  font-weight: 500;
+  border-width: 1px;
+  background: #c42f11;
+  color: #fff;
+}
+.section-table table tr .td-delete .delete:hover {
+  outline: 4px solid #eba3a3;
+}
+.section-table table tr .td-delete .delete:disabled {
+  border: 1px solid #9f6161;
+  background: #eba3a3;
+}
+
+input[type=text] {
+  display: block;
+  width: 80%;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #C0C0C0;
+  font-size: 22px;
+  font-weight: 500;
+  border-width: 1px;
+  background: white;
+  outline: #EAEBED;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+input[type=text]:focus {
+  outline: 4px solid #cbdcf2;
+  border: 1px solid #2785F7;
+}
+
+.section-form {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  width: 600px;
+  height: auto;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin: 0 auto;
+  top: 200px;
+  font-size: 28px;
+  background-color: #fff;
+  z-index: 99;
+}
+.section-form .edit-box {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid rgb(188, 185, 185);
+}
+.section-form .header-box {
+  width: 100%;
+  height: 60px;
+  margin: 5px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(188, 185, 185);
+}
+.section-form .header-form {
+  font-size: 24px;
+  color: #144683;
+  text-align: left;
+  margin-left: 5%;
+}
+.section-form .close {
+  margin-right: 5%;
+  padding: 10px auto;
+  font-size: 24px;
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  text-align: center;
+  color: #0d2f58;
+}
+.section-form .close:hover {
+  border-radius: 4px solid #bcb6b6;
+  background-color: #EAEBED;
+}
+.section-form .edit-text {
+  margin-bottom: 22px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.section-form .edit-text {
+  width: 100%;
+}
+.section-form .footer-box {
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+}
+.section-form .footer-box .save {
+  width: 100px;
+  height: 35px;
+  margin-right: 5%;
+  font-size: 18px;
+  color: #fff;
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  border-radius: 4px;
+}
+.section-form .footer-box .save:hover {
+  outline: 2px solid rgb(127, 177, 227);
+}
+
+.show {
+  display: flex;
+}
+
+.visible {
+  background-color: rgba(0, 0, 0, 0.7803921569);
+  opacity: 0.5;
+  z-index: 3;
+}/*# sourceMappingURL=table.component.css.map */

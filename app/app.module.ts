@@ -18,7 +18,7 @@ import { SearchPipe } from './lesson05/pipes/search.pipe';
 
 import { Lesson05Component } from './lesson05/lesson05.component';
 
-import { HeaderComponent } from './lesson05/component/header/header.component';
+import { HeaderComponent } from './lesson06/component/header/header.component';
 
 import { HomeComponent } from './lesson05/pages/home/home.component';
 import { WorksComponent } from './lesson05/pages/works/works.component';
@@ -27,6 +27,9 @@ import { CenzorComponent } from './lesson05/pages/works/cenzor/cenzor.component'
 import { UsersComponent } from './lesson05/pages/works/users/users.component';
 import { TaskComponent } from './lesson05/pages/works/task/task.component';
 import { ChildtableComponent } from './lesson05/pages/works/task/childtable/childtable.component';
+import { Lesson06Component } from './lesson06/lesson06.component';
+import { LoginComponent } from './lesson06/component/login/login.component';
+import { AddpostComponent } from './lesson06/component/addpost/addpost.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { ChildtableComponent } from './lesson05/pages/works/task/childtable/chil
     UsersComponent,
     TaskComponent,
     ChildtableComponent,
+    Lesson06Component,
+    LoginComponent,
+    AddpostComponent,
   ],
   imports: [
     BrowserModule,
